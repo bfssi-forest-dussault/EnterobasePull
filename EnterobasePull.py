@@ -5,18 +5,11 @@ import shutil
 import urllib.request
 
 from pathlib import Path
-from config import API_TOKEN, OUTDIR
+from config import API_TOKEN, OUTDIR, SERVER_ADDRESS, DATABASE, SCHEME_LIST
 
 __version__ = "0.0.1"
 __author__ = "Forest Dussault"
 __email__ = "forest.dussault@canada.ca"
-
-SERVER_ADDRESS = 'http://enterobase.warwick.ac.uk'
-DATABASE = 'senterica'
-SCHEME_LIST = ['wgMLST',
-               'cgMLST',
-               'cgMLST_v2',
-               'MLST_Achtman']
 
 
 def create_request(url: str):
