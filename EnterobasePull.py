@@ -57,7 +57,7 @@ def download_schemes(data: dict, outdir: Path):
 def main():
     for scheme in SCHEME_LIST:
         print(f"Starting download for {scheme}")
-        address = f"http://enterobase.warwick.ac.uk/api/v2.0/senterica/{scheme}/loci?limit=4000"
+        address = f"{SERVER_ADDRESS}/api/v2.0/{DATABASE}/{scheme}/loci?limit=4000"
         data = retrieve_json(url=address)
         outdir = OUTDIR / scheme
         os.makedirs(outdir, exist_ok=True)
