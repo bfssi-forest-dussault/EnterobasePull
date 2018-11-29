@@ -14,8 +14,6 @@ API_TOKEN = "your secret API token goes here"
 
 SERVER_ADDRESS = 'http://enterobase.warwick.ac.uk'
 DATABASE = 'senterica'
-SCHEME_LIST = ['wgMLST',
-               'cgMLST',
-               'cgMLST_v2',
+SCHEME_LIST = ['cgMLST_v2',
                'MLST_Achtman']
 ```
