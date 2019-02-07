@@ -1,10 +1,10 @@
-import os
-import json
 import base64
+import json
+import os
 import shutil
 import urllib.request
-
 from pathlib import Path
+
 from config import API_TOKEN, OUTDIR, SERVER_ADDRESS, DATABASE, SCHEME_LIST
 
 __version__ = "0.0.1"
@@ -31,6 +31,7 @@ def retrieve_json(url: str):
 
 def download_loci(data: dict, outdir: Path):
     """Download all loci from data object to output directory"""
+    fail_list = []
     for scheme_record in data['loci']:
         profile_link = scheme_record['download_alleles_link']
         locus = scheme_record['locus']
@@ -38,10 +39,17 @@ def download_loci(data: dict, outdir: Path):
         if not file_name.exists():
             if profile_link:
                 print(f"Retrieving {profile_link}...")
-                with urllib.request.urlopen(profile_link) as response, open(str(file_name), 'wb') as out_file:
-                    shutil.copyfileobj(response, out_file)
+                try:
+                    with urllib.request.urlopen(profile_link) as response, open(str(file_name), 'wb') as out_file:
+                        shutil.copyfileobj(response, out_file)
+                except BaseException as e:
+                    print(f"Couldn't retrieve {profile_link}")
+                    fail_list.append(profile_link)
+                    continue
         else:
             print(f"{file_name} already exists, skipping")
+    if len(fail_list) > 0:
+        print(f"FAILED: {fail_list}")
 
 
 def download_schemes(data: dict, outdir: Path):
