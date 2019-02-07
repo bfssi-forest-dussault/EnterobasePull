@@ -44,5 +44,5 @@ The names of the databases and scheme lists are not immediately clear on the Ent
 
 Enter these values into your *config.py* file accordingly.
 
-To view schemes for other databases, you'll need to send a GET request to [http://enterobase.warwick.ac.uk/api/v2.0/**DATABASE NAME HERE**/schemes].
-Note that your username must be your API token.
+To view schemes for other databases, you'll need to send a GET request to http://enterobase.warwick.ac.uk/api/v2.0/DATABASE_NAME_HERE/schemes.
+Note that your username must be your API token, and you'll need to set the Content-Type to application/json in the header of your request. I suggest using [PostMan](https://www.getpostman.com/) to do this easily.
