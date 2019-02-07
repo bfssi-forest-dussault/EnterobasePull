@@ -39,8 +39,8 @@ The names of the databases and scheme lists are not immediately clear on the Ent
 |  |         | rMLST   |
 |  |         | wgMLST   |
 | Escherichia/Shigella | ecoli        | MLST_Achtman      |
-|  |         | rMLST   |
 |  |         | cgMLST   |
+|  |         | wgMLST   |
 
 Enter these values into your *config.py* file accordingly.
 
