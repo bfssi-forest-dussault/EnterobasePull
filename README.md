@@ -17,3 +17,32 @@ DATABASE = 'senterica'
 SCHEME_LIST = ['cgMLST_v2',
                'MLST_Achtman']
 ```
+
+## Notes on config.py
+Note that there are several databases available on EnteroBase:
+- Salmonella
+- Escherichia/Shigella
+- Clostridioides
+- Vibrio
+- Yersinia
+- Helicobacter
+- Moraxella
+
+Each of these **requires its own API key**.
+
+The names of the databases and scheme lists are not immediately clear on the EnteroBase documentation, so here's a table of the available schemes for E. coli and Salmonella:
+
+| Database   | Database keyword | Scheme keyword |
+| ---------- | ---------------- | -------------- |
+| Salmonella | senterica        | MLST_Achtman      |
+|  |         | cgMLST_v2   |
+|  |         | rMLST   |
+|  |         | wgMLST   |
+| Escherichia/Shigella | ecoli        | MLST_Achtman      |
+|  |         | rMLST   |
+|  |         | cgMLST   |
+
+Enter these values into your *config.py* file accordingly.
+
+To view schemes for other databases, you'll need to send a GET request to [http://enterobase.warwick.ac.uk/api/v2.0/**DATABASE NAME HERE**/schemes].
+Note that your username must be your API token.
