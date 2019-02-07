@@ -7,15 +7,11 @@ The config file must be in the same folder as the `EnterobasePull.py` script. Se
 
 **config.py**
 ```python
-from pathlib import Path
-
 OUTDIR = Path("/home/your_name/Enterobase")
 API_TOKEN = "your secret API token goes here"
-
 SERVER_ADDRESS = 'http://enterobase.warwick.ac.uk'
 DATABASE = 'senterica'
-SCHEME_LIST = ['cgMLST_v2',
-               'MLST_Achtman']
+SCHEME_LIST = ['cgMLST_v2', 'MLST_Achtman']
 ```
 
 ## Notes on config.py
