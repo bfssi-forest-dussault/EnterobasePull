@@ -1,13 +1,13 @@
-import base64
-import json
 import os
+import json
+import base64
 import shutil
 import urllib.request
 from pathlib import Path
 
 from config import API_TOKEN, OUTDIR, SERVER_ADDRESS, DATABASE, SCHEME_LIST
 
-__version__ = "0.0.1"
+__version__ = "0.0.2"
 __author__ = "Forest Dussault"
 __email__ = "forest.dussault@canada.ca"
 
